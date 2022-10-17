@@ -56,3 +56,14 @@ submitBtn.addEventListener("click", function () {
 
   inputField.focus();
 });
+
+// Enter key to also work as Submit button
+
+inputField.addEventListener("keypress", function (event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    submitBtn.click();
+  }
+  inputField.focus();
+  inputField.value = "";
+});
